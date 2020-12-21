@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- costum css  -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+    <title>{%block title%}{% endblock %}</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/">AI diagnosis</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/cancer">cancer</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <main>
+        <div style="color:rgb(1, 1, 7)">
+            <form action="{{ url_for('cancer')}}" method="post">
+                <h2>Predictive analysis</h2>
+                <h3>enter perimeter worst </h3>
+                <input id="first" name="perimeter_worst" type="number ">
+                <h3>What enter concave points mean </h3><br><input id="second" name="concave_points_mean" required="required" style="width: 50px;padding-left: 100px;text-align: center;" class="form-control">
+                <h3>Enter radius worst</h3><input id="third" name="radius_worst" required="required">
+                <h3>Enter concave points worst</h3><br><input id="fourth" name="concave_points_worst" required="required">
+                <h3>Enter radius mean</h3><br><input name="radius_mean" id="fuel" required="required">
+                <h3>Enter area_mean</h3><br><input name="area_mean" id="resea" required="required">
+                <h3>Enter concavity_mean</h3><br><input name="concavity_mean" id="research" required="required">
+                <h3>Enter perimeter_mean</h3><br><input name="perimeter_mean" id="research1" required="required">
+                <h3>Enter area_worst</h3><br><input name="area_worst" id="research12" required="required">
+                <h3>Enter concavity_worst</h3><br><input name="concavity_worst" id="research123" required="required">
+                
+                    
+                <br><br><button id="sub" type="submit ">Submit </button>
+                <br>
+    
+    
+    
+    
+            </form>
+    
+    
+    
+            <br><br><h3>{{ prediction_text }}<h3>
+        </div>
+    
+        
+          {%block main%} {% endblock %}
+        </main>
+        <style>
+            body {
+                
+                text-align: center;
+                padding: 0px;
+            }
+            
+            </style>
+    
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script> src="{{url_for('static',filename='js/app.js')}}" </script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
